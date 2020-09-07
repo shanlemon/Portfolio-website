@@ -1,6 +1,5 @@
-# Portfolio-website
-work in progress. WIll be live on shanmemon.com
+# ShanMemon.com | Portfolio Website
 
+work in progress.
 
-this is a test
-another test
+Will be live on shanmemon.com
