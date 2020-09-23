@@ -23,15 +23,14 @@ function Navbar() {
           <div className='menu-icon' onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
           </div>
-
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <Link to='/resume' onClick={closeMobileMenu}>
+            <Link to='/resume' className="nav-links" onClick={closeMobileMenu}>
               <li className='nav-item'>Resume</li>
             </Link>
-            <Link onClick={(closeMobileMenu, scrollTo(10))}>
+            <Link className="nav-links" onClick={(closeMobileMenu, scrollTo(10))}>
               <li className='nav-item'>Contact Me</li>
             </Link>
-            <Link onClick={(closeMobileMenu, scrollTo(20))}>
+            <Link className="nav-links" onClick={(closeMobileMenu, scrollTo(20))}>
               <li className='nav-item'>Timeline</li>
             </Link>
           </ul>
