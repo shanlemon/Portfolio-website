@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const IntroBlock = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 500px;
+  height: 1000px;
 `
 
 const LeftSide = styled.div`
