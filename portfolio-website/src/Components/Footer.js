@@ -30,8 +30,7 @@ const ExporePanel = styled.div `
 
 const SocialPanel = styled.div `
   background-color: green;
-  width 200px;
-
+  width: 200px;
 `
 
 const Email = styled.div`
