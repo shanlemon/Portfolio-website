@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { HiOutlineMail } from 'react-icons/hi'
-import { Mailto } from './Mailto'
+import { MailTo } from './MailTo'
 import { Link } from 'react-router-dom'
 
 const FooterContainer = styled.div`
@@ -65,9 +65,9 @@ function Footer() {
             <MailIcon>
               <HiOutlineMail />
             </MailIcon>
-            <Mailto email={'shankmemon@gmail.com'} subject='Hey Shan!'>
+            <MailTo email={'shankmemon@gmail.com'} subject='Hey Shan!'>
               <p className='link'>ShanKMemon@gmail.com</p>
-            </Mailto>
+            </MailTo>
           </Email>
         </LeftSide>
         <RightSide>
