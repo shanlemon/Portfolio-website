@@ -1,5 +1,5 @@
 import React from 'react';
-import shanPortrait from '../../media/shan.jpg';
+import shanPortrait from '../../media/shan.png';
 import styled from 'styled-components';
 
 const IntroBlock = styled.div`
@@ -12,11 +12,16 @@ const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
+ 
 const LeftSide = styled.div`
   text-align: right;
   margin: 10px;
 `;
+
+const ShanPortrait = styled.img`
+  height: 25%;
+`
+ 
 const RightSide = styled.div``;
 
 function HomeRouteRoute() {
@@ -27,7 +32,7 @@ function HomeRouteRoute() {
           <h1>Hi, I'm Shan</h1>
         </LeftSide>
         <RightSide>
-          <img src={shanPortrait} alt='Shan Memon' />
+          <ShanPortrait src={shanPortrait} alt='Shan Memon' />
         </RightSide>
       </IntroBlock>
     </MainWrapper>

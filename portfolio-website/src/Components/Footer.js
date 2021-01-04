@@ -1,91 +1,151 @@
-import React from 'react'
-import styled from 'styled-components'
-import { HiOutlineMail } from 'react-icons/hi'
-import { MailTo } from './MailTo'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { MailTo } from './MailTo';
+import { Link } from 'react-router-dom';
+import {
+  AiFillLinkedin,
+  AiFillInstagram,
+  AiFillFacebook,
+} from 'react-icons/ai';
+
+import { FaArrowAltCircleUp } from 'react-icons/fa';
 
 const FooterContainer = styled.div`
-  display: grid;
-  grid-template-columns: 0.2fr 0.8fr;
-  background-color: rgb(207, 90, 90);
-`
+  color: white;
+  background-color: black;
+  height: 400px;
+  text-decoration: none;
+`;
 
-const LeftSide = styled.div`
+const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  background-color: darkolivegreen;
-  text-align: center;
-`
+  margin: 4rem 0 4rem 8rem;
+`;
 
-const RightSide = styled.div `
+const InfoPanel = styled.div`
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  text-align: left;
+`;
+
+const RightSide = styled.div`
   display: flex;
   flex-direction: row;
   margin: 10px;
-`
+  width: 100%;
+`;
 
-const ExporePanel = styled.div `
-  background-color: yellow;  
+const ExporePanel = styled.div`
   width: 200px;
-`
+`;
 
-const SocialPanel = styled.div `
-  background-color: green;
+const SocialPanel = styled.div`
   width: 200px;
-`
+`;
 
-const Email = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  height: 40px;
-`
-
-const MailIcon = styled.div`
-  display: flex;
-  transform: scale(1.25);
-  align-items: center;
-  margin-right: 5px;
-`
-
-const Links = styled.div `
+const Links = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-`
+
+  text-decoration: none;
+`;
+
+const RedirectLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  height: 50px;
+  font-size: 2rem;
+`;
+
+const NewTabButton = styled.a`
+  cursor: pointer;
+`;
+
+const BackToTop = styled.div`
+  
+  margin-right: 5rem;
+  width: 100%;
+  text-align: right;
+  svg{
+    font-size: 2rem;
+  }
+`;
 
 function Footer() {
+  const openLink = (url) => {
+    const win = window.open(url, '_blank');
+    if (win) {
+      win.focus();
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className='container'>
-      <FooterContainer>
-        <LeftSide>
-          <h1>ShanMemon.com</h1>
-          <Email>
-            <MailIcon>
-              <HiOutlineMail />
-            </MailIcon>
-            <MailTo email={'shankmemon@gmail.com'} subject='Hey Shan!'>
-              <p className='link'>ShanKMemon@gmail.com</p>
-            </MailTo>
-          </Email>
-        </LeftSide>
+    <FooterContainer>
+      <Content>
+        <InfoPanel>
+          <h1>Shan K Memon</h1>
+          <br />
+          <b>Have any questions?</b>
+          <MailTo email={'shankmemon@gmail.com'} subject='Hey Shan!'>
+            <p>ShanKMemon@gmail.com</p>
+          </MailTo>
+          <p>(832) 917-4944</p>
+        </InfoPanel>
         <RightSide>
           <ExporePanel>
-            <h3>EXPLORE MORE</h3>
+            <h3>Links</h3>
+            <br />
             <Links>
-              <Link className='link'>Resume</Link>
-              <Link className='link'>Contact Me</Link>
-              <Link className='link'>Timeline</Link>
+              <RedirectLink to='/'>Home</RedirectLink>
+              <RedirectLink to='/resume'>Resume</RedirectLink>
+              <RedirectLink to='/contact'>Contact Me</RedirectLink>
+              <RedirectLink to='/timeline'>Timeline</RedirectLink>
             </Links>
           </ExporePanel>
           <SocialPanel>
-            <h3>SOCIALS</h3>
-            
+            <h3>Socials</h3>
+            <br />
+            <Icons>
+              <NewTabButton
+                onClick={() =>
+                  openLink('https://www.linkedin.com/in/shanmemon/')
+                }
+              >
+                <AiFillLinkedin style={{ margin: -3, marginRight: 2 }} />
+              </NewTabButton>
+              <NewTabButton
+                onClick={() => openLink('http://instagram.com/shanmemon_')}
+              >
+                <AiFillInstagram style={{ margin: -3, marginRight: 2 }} />
+              </NewTabButton>
+              <NewTabButton
+                onClick={() =>
+                  openLink('https://www.facebook.com/shan.memon.5243/')
+                }
+              >
+                <AiFillFacebook style={{ margin: -3, marginRight: 2 }} />
+              </NewTabButton>
+            </Icons>
           </SocialPanel>
+          <BackToTop>
+            <NewTabButton onClick={scrollToTop}>
+              <FaArrowAltCircleUp />
+            </NewTabButton>
+          </BackToTop>
         </RightSide>
-      </FooterContainer>
-    </div>
-  )
+      </Content>
+    </FooterContainer>
+  );
 }
 
-export default Footer
+export default Footer;
