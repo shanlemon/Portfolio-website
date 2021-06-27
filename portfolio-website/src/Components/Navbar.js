@@ -97,6 +97,9 @@ function Navbar() {
           </MenuIcon>
 
           <NavMenu active={click}>
+            <NavLinks to='/' onClick={closeMobileMenu}>
+              <NavItem>Home</NavItem>
+            </NavLinks>
             <NavLinks to='/resume' onClick={closeMobileMenu}>
               <NavItem>Resume</NavItem>
             </NavLinks>

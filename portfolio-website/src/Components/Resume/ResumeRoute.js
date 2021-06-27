@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProjectTile from "./ProjectTile";
 import LeftBanner from "../LeftBanner";
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 
 const IntroBlock = styled.div`
   flex: 1;
@@ -26,7 +26,8 @@ const RightSide = styled.div`
   margin: 0 50px;
 `;
 
-function HomeRoute() {
+function ResumeRoute() {
+
   return (
     <MainWrapper>
       <IntroBlock>
@@ -34,12 +35,14 @@ function HomeRoute() {
           <LeftBanner />
         </LeftSide>
         <RightSide>
-          <h1>My Projects</h1>
-          <ProjectTile></ProjectTile>
+          <h1>Resume</h1>
+          <Document file="../resume.pdf">
+            <Page pageNumber={0} />
+          </Document>
         </RightSide>
       </IntroBlock>
     </MainWrapper>
   );
 }
 
-export default HomeRoute;
+export default ResumeRoute;

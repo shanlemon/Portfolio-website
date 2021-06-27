@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './components/Home/HomeRoute';
 import Navbar from './components/Navbar';
 import styled from 'styled-components';
+import ResumeRoute from "./components/Resume/ResumeRoute";
 
 const GlobalWrapper = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ function App() {
         <MainWrapper>
           <Switch>
             <Route path='/' exact component={Home} />
+            <Route path='/resume' exact component={ResumeRoute} />
           </Switch>
         </MainWrapper>
         <Footer />
